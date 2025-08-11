@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Flour", "unit": "grams", "pricePerUnit": 0.0009 },
+  { "id": 2, "name": "Sugar", "unit": "grams", "pricePerUnit": 0.001 },
+  { "id": 3, "name": "Butter", "unit": "grams", "pricePerUnit": 0.009 },
+  { "id": 4, "name": "Eggs", "unit": "each", "pricePerUnit": 0.30 }
+
+]

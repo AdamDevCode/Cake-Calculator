@@ -1,22 +1,65 @@
 {
-  "name": "my-app",
+  "name": "cake-ingredients-calculator",
   "version": "0.1.0",
+  "description": "A desktop app to calculate cake ingredient costs",
+  "author": "Your Name",
   "private": true,
+  "homepage": ".",
+  "main": "main.js",
+  "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "electron": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
+  "dist": "npm run build-react && electron-builder",
+  "build-react": "react-scripts build",
+  "start:prod": "electron ."
+
+},
+
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.6.4",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "electron": "^37.2.5",
+    "electron-builder": "^26.0.12",
+    "cross-env": "^7.0.3"
+  },
+  "build": {
+    "appId": "com.yourname.cakeingredients",
+    "productName": "CakeIngredientsCalculator",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "extraMetadata": {
+    "main": "main.js" 
+  },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
   },
   "eslintConfig": {
     "extends": [
